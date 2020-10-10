@@ -21,34 +21,6 @@ __mode = "k" -- weak keys avoid mem leak
 }
 
 
---[[
-Planning :::
-
-Everything is comprised of `tasks`.
-
-Tasks are a really good way to keep state across iterations of the BehaviourTree.
-Each time a task ends,
-you must call a ending function to signify what to do with the tree.
-
-
-task_fn --> function( t, entity, dt ) <<<<<>>>>>> end
-
-t:reset() --> resets current Node hierachy
-
-t:resume() --> resumes same task next frame
-
-t:next()  -->  quits the task next frame, runs next one
-
-t:to( task_name ) --> quits the task next frame, goes to task named `task_name`.
-
-
-
-
-`Nodes` are the tree structure.
-These are what tasks are stored in
-
-]]
-
 
 local function newTask( task )
     --[[
