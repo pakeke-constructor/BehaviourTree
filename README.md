@@ -1,8 +1,4 @@
 
-# !!! There is a (small) memory leak !!
-# when entities are deleted whilst a task is still running, the key on `task.time_runnings` serves as a refcounter, and the task never finishes to remove the reference.
-# This could be solved by having weak keys I think, but do more research!!!
-
 # BehaviourTree
 
 Note: I made this library in an afternoon and it has hardly been tested, so take care!!!!
