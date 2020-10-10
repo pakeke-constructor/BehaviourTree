@@ -1,4 +1,8 @@
 
+# !!! There is a (small) memory leak !!
+# when entities are deleted whilst a task is still running, the key serves as a refcounter, and the task never quits.
+# This could be solved by having weak keys I think, but do more research!!!
+
 # BehaviourTree
 
 Note: I made this library in an afternoon and it has hardly been tested, so take care!!!!
@@ -19,6 +23,12 @@ Think of a Node like a Task that has many steps, except it keeps state across ca
 # Tasks
 
 ### Task creation:
+The main bit of a task is it's `run` method.
+
+`run` takes `(self, object, dt)` as its arguments, and is called every frame whilst the task is running.
+(`self` in this case refers to the task.)
+
+You must specify how the `run` method ends, to tell the Tree where to move to next. More on this in the next, though.
 ```lua
 local BT = require("path.BehaviourTree")
 
