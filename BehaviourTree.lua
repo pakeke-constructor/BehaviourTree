@@ -13,9 +13,12 @@ local DUMB_FN = function()end
 local DUMB_TABLE = setmetatable({},{__index = function() return DUMB_FN end})
 
 
-local Time_mt = {__index = function()
-    return 0 --> everyone starts off at 0
-end}
+local Time_mt = {
+__index = function()
+    return 0 --> every task time starts off at 0
+end,
+__mode = "k" -- weak keys to delete entity when task is running, and entity get deleted.
+}
 
 
 --[[
