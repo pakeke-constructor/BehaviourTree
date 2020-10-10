@@ -150,7 +150,7 @@ end
 
 There are two "Gotchas" with this library.
 
-- Running a behaviour tree from inside itself may not crash the program, but will cause undefined behaviour.
+- Running a behaviour tree from inside another behaviour tree may not crash the program, but could cause undefined behaviour if the trees share the same tasks.
 
 - The Task `finish` function takes the task object as a parameter, but the task object is locked when the finish function runs.
 
