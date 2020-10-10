@@ -71,10 +71,10 @@ local function newTask( task )
     assert(type(task.name) == "string", "Task( name, func ) requires a name as string, and a function.")
 
     task.node = nil -- The node this task is bound to
-
-    task.time_runnings = {} -- The time spent running for each entity. {ent -> number}
-                            -- this is done this way so we don't have to copy Tasks. Its bad, I know, but it works
-
+    
+    task.time_runnings = setmetatable({}, Time_mt)
+    -- The time spent running for each entity. {ent -> number}
+    -- this is done this way so we don't have to copy Tasks. Its bad, I know, but it works
 
 
     -- Both these fields are temporary fields in the Task object, that don't persist across calls to :run.
