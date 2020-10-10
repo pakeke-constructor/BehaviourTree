@@ -25,10 +25,10 @@ The main bit of a task is it's `run` method.
 (`t` in this case refers to the task.)
 
 At the end of `run`, you must say where the Tree goes to next. This can be done with any of these methods:
-`task:next()`
-`task:reset()`
-`task:resume()`
-`task:to(  )`
+- `t:next()`
+- `t:reset()`
+- `t:resume()`
+- `t:to(  )`
 
 More on this below. Here is how you make a Task:
 
