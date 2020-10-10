@@ -45,7 +45,7 @@ local task1 = BT.Task({
     name = "task1", -- must have a name
 
      -- OPTIONAL: Called when the task starts running
-    start = function( task, obj, dt ) end,
+    start = function( task, obj ) end,
 
 
     -- `run` is called every frame whilst the task is running.
@@ -58,7 +58,7 @@ local task1 = BT.Task({
 
 
     -- OPTIONAL: Called when the task finishes (stops running)
-    finish = function( task, obj, dt ) end
+    finish = function( task, obj ) end
     -- Note that calling task:resume() or anything here won't do anything.
 })
 
