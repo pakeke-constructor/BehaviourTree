@@ -21,10 +21,17 @@ Think of a Node like a Task that has many steps, except it keeps state across ca
 ### Task creation:
 The main bit of a task is it's `run` method.
 
-`run` takes `(self, object, dt)` as its arguments, and is called every frame whilst the task is running.
-(`self` in this case refers to the task.)
+`run` takes `(t, object, dt)` as its arguments, and is called whilst task is running.
+(`t` in this case refers to the task.)
 
-You must specify how the `run` method ends, to tell the Tree where to move to next. More on this in the next, though.
+At the end of `run`, you must say where the Tree goes to next. This can be done with any of these methods:
+`task:next()`
+`task:reset()`
+`task:resume()`
+`task:to(  )`
+
+More on this below. Here is how you make a Task:
+
 ```lua
 local BT = require("path.BehaviourTree")
 
@@ -115,8 +122,6 @@ local my_Node = BT.Node("my_Node")
 
 
 my_Node:add(task1) -- Add task1 to Node
-
-my_Node:add("task1") -- Same thing.
 
 
 
