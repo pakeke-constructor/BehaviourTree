@@ -12,7 +12,7 @@ There are 2 objects in the BehaviourTree module.
 
 `Nodes`, and `Tasks`. Nodes hold Tasks. Nodes can also hold other Nodes. This is how a tree is made!
 Think of a Task like a glorified function.
-Think of a Node like a Task that has many steps, and keeps state across 
+Think of a Node like a Task that has many steps, except it keeps state across calls.
 
 
 
