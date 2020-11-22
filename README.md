@@ -71,7 +71,7 @@ return "n"
 return "k"
 -- The tree will kill it's current state (reset itself fully)
 ```
-If the Task does not return one of these special return values, and error will be raised.
+If the Task does not return one of these special return values, an error will be raised.
 
 
 ### Getting runtime of a task:
