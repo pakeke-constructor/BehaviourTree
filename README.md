@@ -167,17 +167,20 @@ the object will be ran under the tree `Node` without any side effects. You can r
 
 
 ## Node callbacks
-### **UNTESTED / WORK IN PROGRESS AS OF 22/11/2020**
-
+Node callbacks allow you to immediately alter the state of Nodes with simple callbacks.
+For example, if the object takes damage, 
 ```lua
 
 Node:on("damage",
-    function(node, ent)
-        return "scared" -- Changes to `scared` path
+    function(node, obj, health_loss) -- (health_loss is optional arg. Have as many as you want)
+        if health_loss > 30 then
+            return "scared" -- Changes to `scared` path
+        end
+        return nil -- No return value = no change to Tree.
     end
 )
 
-Node:call("damage", ent) -- Callback!
+Node:call("damage", obj, 40) -- Callback! `Node` will change to "scared" path.
 ```
 
 
