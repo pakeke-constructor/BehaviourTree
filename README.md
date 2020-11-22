@@ -21,7 +21,7 @@ local BT = require("path.to.BehaviourTree.init")
 
 Tasks are a collection of functions, that take the following form:
 
-(Note that the table fields `start`, `finish`, and `name` are optional.)
+(Note that the methods `start` and `finish` are optional.)
 ```lua
 local Example = BT.Task("example") -- Name is `example`.
 -- Note that names are optional for Tasks and Nodes.
