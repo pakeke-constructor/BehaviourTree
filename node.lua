@@ -197,7 +197,6 @@ function Node:next(ent)
             self.parent:next(ent)
         else
             self:_reset(ent)
-            print("\n\n PAR RESET === \n\n")
         end
     else
         self._ent_indexes[ent] = index
