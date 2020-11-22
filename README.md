@@ -168,7 +168,10 @@ the object will be ran under the tree `Node` without any side effects. You can r
 
 ## Node callbacks
 Node callbacks allow you to immediately alter the state of Nodes with simple callbacks.
-For example, if the object takes damage, 
+
+The returned value will determine what *path* the Node changes to. If `nil` is returned, the Node stays in it's current state.
+
+For example, if an object takes damage:
 ```lua
 
 Node:on("damage",
